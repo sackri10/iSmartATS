@@ -28,6 +28,25 @@ class ResumePreProcessingAgent():
         self.result = None
         self.error = None
         self.initialize_tools()
+        self.system_prompt= """You are a specialized resume processing agent. Your primary task is to extract key information from resume text and structure it into a clean JSON format.
+
+                        First, you MUST use the provided tools to get the text content from the resume file.
+
+                        After you have the text, extract the following fields and format them as a single JSON object:
+                        1.  **Name**: The full name of the candidate.
+                        2.  **MobileNumber**: The candidate's mobile phone number.
+                        3.  **EmailAddress**: The candidate's email address.
+                        4.  **Title**: The most recent or prominent job title (e.g., "GenAI and Agent Developer", "Full Stack Developer").
+                        5.  **ExperienceInYears**: Total years of professional experience. If "6+" is mentioned, interpret it as 6.5.
+                        6.  **RoleType**: Infer if the role is primarily "Individual Contributor" or "Team Lead" based on the work description.
+                        7.  **SeniorityLevel**: Infer the seniority level (e.g., "Junior", "Mid-Level", "Senior") based on the years of experience if not explicitly stated.
+                        8.  **Skills**: A list of key technical skills (e.g., ["Python", "GenAI", "LLMs", "AWS"]).
+                        9.  **KeyQualifications**: A list of the candidate's most important qualifications or strengths mentioned.
+                        10. **Education**: A summary of educational qualifications (e.g., "Bachelor's degree in Computer Science").
+                        11. **WorkExperience**: A summary of key roles and accomplishments from past jobs.
+
+                        Ensure the final output is only the well-structured JSON and should not contain \n or white spaces.
+                        """
 
        
 
@@ -56,15 +75,11 @@ class ResumePreProcessingAgent():
     
     def getAssistantAgent(self):
         """Get the AssistantAgent instance for this ResumePreProcessingAgent."""
-        return AssistantAgent(
+        return AssistantAgent (
             name=self.name,
-            system_message="" \
-            "You are a resume pre-processing agent. Your task is to extract and process information from resumes. You can handle various file formats and perform necessary transformations." \
-            "You should ensure that the extracted information is accurate and well-structured as json format. From the text extracted by the tools" \
-            "You should extract the name, contact information, skills, work experience, and education details from the resume." \
-            "You should also ensure that the extracted information is accurate and well-structured as json format",
+            system_message=self.system_prompt,
             tools=self.tools,
             description=self.description,
             model_client=self.model_client,
-            reflect_on_tool_use=True,
+            reflect_on_tool_use=True
         )

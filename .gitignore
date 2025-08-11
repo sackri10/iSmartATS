@@ -3,3 +3,4 @@ temp/resume.pdf
 .pyc
 tools/__pycache__/DocxProcessingTool.cpython-313.pyc
 *.pyc
+output/resume.json

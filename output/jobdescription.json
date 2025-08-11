@@ -1,0 +1,57 @@
+{
+    "Title": "GenAI and Agent Developer",
+    "ExperienceInYears": "Not specified",
+    "RoleType": "Individual Contributor",
+    "SeniorityLevel": "Mid-Level",
+    "Skills": [
+        "Python",
+        "OOP",
+        "LangChain",
+        "LlamaIndex",
+        "OpenAI",
+        "Anthropic",
+        "LLMs",
+        "Docker",
+        "Kubernetes",
+        "AWS",
+        "GCP",
+        "Azure",
+        "React.js",
+        "Next.js"
+    ],
+    "KeyQualifications": [
+        "Strong proficiency in Python",
+        "Experience with LangChain, LlamaIndex",
+        "Hands-on experience with OpenAI, Anthropic APIs",
+        "Strong understanding of SDLC and methodologies",
+        "Experience building RAG systems",
+        "Exposure to vector databases",
+        "Familiarity with containerization",
+        "Knowledge of cloud platforms",
+        "Experience with front-end technologies",
+        "Exposure to MLOps/LLMops"
+    ],
+    "Education": [],
+    "WorkExperience": "Experience in End-to-End implementation/POCS in Agentic AI framework",
+    "Responsibilities": [
+        "Design, develop, and deploy GenAI applications and autonomous agents",
+        "Integrate LLMs into products or workflows",
+        "Build backend components to support GenAI features",
+        "Work with prompt engineering, tool usage, and memory management",
+        "Participate in the full SDLC process",
+        "Write clean, modular, and testable code",
+        "Troubleshoot, debug, and optimize systems",
+        "Collaborate with cross-functional teams"
+    ],
+    "keywords": [
+        "GenAI",
+        "Agent Developer",
+        "Python",
+        "SDLC",
+        "LangChain",
+        "LLMs",
+        "Docker",
+        "AWS",
+        "React.js"
+    ]
+}
